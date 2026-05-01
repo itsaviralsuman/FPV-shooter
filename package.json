@@ -1,0 +1,18 @@
+{
+  "name": "fpv-arena-shooter",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "serve": "node server.mjs"
+  },
+  "dependencies": {
+    "@vitejs/plugin-basic-ssl": "^2.1.0",
+    "vite": "^6.0.0",
+    "three": "^0.170.0"
+  },
+  "devDependencies": {}
+}

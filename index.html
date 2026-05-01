@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Strike Grid FPV</title>
+  </head>
+  <body>
+    <div id="app">
+      <canvas id="game"></canvas>
+
+      <section id="startPanel" class="overlay">
+        <div class="titleBlock">
+          <p class="kicker">3D FPV Shooter</p>
+          <h1>Strike Grid</h1>
+          <p class="subtitle">6 opponents, 3 arenas, weapon unlocks, coin rewards, and mouse aim combat.</p>
+        </div>
+        <div class="menuGrid">
+          <button class="mapButton active" data-map="0">
+            <span>Foundry</span>
+            <small>tight cover</small>
+          </button>
+          <button class="mapButton" data-map="1">
+            <span>Dust Yard</span>
+            <small>long lanes</small>
+          </button>
+          <button class="mapButton" data-map="2">
+            <span>Neon Deck</span>
+            <small>fast angles</small>
+          </button>
+        </div>
+        <div class="modeGrid">
+          <button class="modeButton" data-difficulty="easy">
+            <span>Easy</span>
+            <small>practice fire</small>
+          </button>
+          <button class="modeButton active" data-difficulty="normal">
+            <span>Normal</span>
+            <small>balanced fight</small>
+          </button>
+          <button class="modeButton" data-difficulty="hard">
+            <span>Hard</span>
+            <small>fast squads</small>
+          </button>
+          <button class="modeButton" data-difficulty="extreme">
+            <span>Extreme</span>
+            <small>no mercy</small>
+          </button>
+        </div>
+        <button id="startButton" class="primaryButton">Start Mission</button>
+      </section>
+
+      <div id="hud" class="hud hidden">
+        <div class="hudTop">
+          <div class="stat"><span>HP</span><strong id="healthText">100</strong></div>
+          <div class="stat"><span>Coins</span><strong id="coinsText">0</strong></div>
+          <div class="stat ammoStat"><span>Ammo</span><strong id="ammoText">30 / 90</strong></div>
+          <div class="stat"><span>Opponents</span><strong id="opponentsText">6</strong></div>
+          <div class="stat dangerStat"><span>Wave</span><strong id="waveText">1</strong></div>
+          <div class="stat dangerStat"><span>Mode</span><strong id="modeText">Normal</strong></div>
+          <div class="stat"><span>Kills</span><strong id="killText">0</strong></div>
+          <div class="stat"><span>Map</span><strong id="mapText">Foundry</strong></div>
+        </div>
+        <button id="menuButton" class="menuButton" type="button">Menu</button>
+        <div id="reloadMeter" class="reloadMeter"><span></span></div>
+        <canvas id="miniMap" class="miniMap" width="190" height="190"></canvas>
+        <div id="weaponStrip" class="weaponStrip"></div>
+        <div id="waveBanner" class="waveBanner">Wave 1</div>
+        <div id="streakText" class="streakText"></div>
+        <div id="message" class="message">Click to lock aim</div>
+        <div id="hitMarker" class="hitMarker"></div>
+        <div id="crosshair" class="crosshair">
+          <i></i><i></i><i></i><i></i>
+        </div>
+        <div id="damageFlash" class="damageFlash"></div>
+      </div>
+
+      <div id="gameOver" class="overlay compact hidden">
+        <h2 id="resultTitle">Mission Failed</h2>
+        <p id="resultText">Regroup, buy better gear, and go again.</p>
+        <button id="retryButton" class="primaryButton">Restart</button>
+      </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
