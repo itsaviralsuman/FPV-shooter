@@ -190,6 +190,17 @@ let gunGroup = new THREE.Group();
 let muzzleLight = new THREE.PointLight(0xfff1a3, 0, 8);
 let audioContext;
 let enemyDeathAudios = [];
+let equippedGuns = [allGuns[0], null, null];
+
+const mapInfo = [
+  { emoji: "🏭", desc: "Industrial factory with close quarters." },
+  { emoji: "🏜️", desc: "Open desert field with long range lanes." },
+  { emoji: "🌆", desc: "Neon city rooftop with fast verticality." }
+];
+
+function getEquippedGun(slot) {
+  return equippedGuns[slot];
+}
 
 const keys = new Set();
 const maxActiveTracers = 30;
